@@ -1,0 +1,14 @@
+services:
+  smb1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smb-for-scanning
+    environment:
+      SMB_USERNAME: example_username
+      SMB_PASSWORD: example_password
+      SHARE_NAME: example_sharename
+    ports:
+      - "445:445/tcp"
+    volumes:
+      - /path/to/local/directory:/share
